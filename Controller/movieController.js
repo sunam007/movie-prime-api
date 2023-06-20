@@ -5,12 +5,14 @@ exports.getMovies = async (req, res) => {
 
   try {
     // PAGINATION //
-    const { page = 1, limit = 5, sort } = req.query;
+    // const { page = 1, limit = 5, sort } = req.query;
     // Page 1: 1-10 Page 2: 11-20 Page 3: 21-30
-    const skip = (+page - 1) * limit;
+    // const skip = (+page - 1) * limit;
 
     // find().skip().limit()
-    const movies = await Movie.find().sort(sort).skip(skip).limit(limit);
+    // const movies = await Movie.find().sort(sort).skip(skip).limit(limit);
+
+    const movies = await Movie.find();
 
     res
       .status(200)
